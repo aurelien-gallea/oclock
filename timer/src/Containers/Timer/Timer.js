@@ -8,6 +8,7 @@ function Timer() {
   
   const [validate, setValidate] = useState(false);
   const [isStopped, setIsStopped] = useState(false);
+  const [isCancelled, setIsCancelled] = useState(false);
 
   useEffect(() => {
     if (seconds >= 60) {
@@ -38,12 +39,17 @@ function Timer() {
       clearInterval(run)
     }
     if (minutes === 0 && seconds === 0 && validate) {
-      toast.warning("Temps écoulé !");
+      if (!isCancelled) {
+        toast.warning("Temps écoulé !");
+      } else {
+        toast.error("Minuteur annulé !");
+      }
       clearInterval(run);
       setValidate(false);
+      setIsCancelled(false);
     }
     return () => clearInterval(run);
-  }, [minutes, seconds, validate, isStopped]);
+  }, [minutes, seconds, validate, isStopped, isCancelled]);
 
   
   const submitFormHandler = (e) => {
@@ -71,6 +77,7 @@ function Timer() {
     setMinutes(0);
     setSeconds(0);
     setIsStopped(false);
+    setIsCancelled(true);
   }
   
   const toggleClickedHandler = () => {
