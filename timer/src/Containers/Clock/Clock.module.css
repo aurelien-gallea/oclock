@@ -1,0 +1,15 @@
+.title {
+    margin: 3rem 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Clock {
+    margin-top: rem;
+    font-size: 3rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing:0.6rem;
+    border: 1px solid black;
+    border-radius: 0.8rem;
+    
+    padding: 2rem;
+    background: rgb(255, 145, 0);
+}

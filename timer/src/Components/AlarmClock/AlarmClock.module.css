@@ -1,0 +1,23 @@
+.result {
+    display: flex;
+    justify-content: space-between;
+    
+    margin-top: 1rem;
+    width: 300px;
+    max-width: 90%;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    margin: 1rem auto;
+}
+.set {
+
+    background-color: brown;
+}
+
+.unset {
+    background-color: gray;
+}
+
+.message {
+    margin-top: 0.25rem;
+}
